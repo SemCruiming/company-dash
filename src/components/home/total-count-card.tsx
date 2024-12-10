@@ -15,7 +15,7 @@ const DashboardTotalCountCard = ({
   isLoading,
   totalCount
 }: Props) => {
-  const { primaryColor, secondaryColor, icon, title } = totalCountVariants[resource];
+  const { primaryColor, icon, title } = totalCountVariants[resource];
 
   const config: AreaConfig = {
     data: totalCountVariants[resource].data,
@@ -24,35 +24,8 @@ const DashboardTotalCountCard = ({
     autoFit: true,
     padding: 0,
     tooltip: false,
-    xAxis: {
-      label: undefined, // Removes x-axis labels
-      line: undefined,  // Removes the x-axis line
-      tickLine: undefined, // Removes tick marks
-      grid: undefined, // Disables gridlines
-    },
-    yAxis: {
-      tickCount: 12,
-      label: {
-        style: {
-          stroke: "transparent",
-        },
-      },
-      grid: {
-        line: {
-          style: {
-            stroke: "transparent",
-          },
-        },
-      },
-    },
-    smooth: true,
     line: {
       color: primaryColor,
-    },
-    areaStyle: () => {
-      return {
-        fill: `l(270) 0:#fff 0.2${secondaryColor} 1:${primaryColor}`,
-      };
     },
   };
 

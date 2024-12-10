@@ -30,20 +30,11 @@ const DealsChart = () => {
     data: dealData,
     xField: 'timeText',
     yField: 'value',
-    isStack: false,
+    stack: false,
     seriesField: 'state',
-    animation: true,
-    startOnZero: false,
-    smooth: true,
     legend: {
       offsetY: -2
     },
-    xAxis: {
-        label: false, // Remove x-axis labels
-      },
-      yAxis: {
-        label: false, // Remove y-axis labels
-      },
     tooltip: {
       formatter: (data: { state: string; value: number }) => {
         return {
